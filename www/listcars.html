@@ -9,7 +9,9 @@
         <meta name="color-scheme" content="light dark">
         <link rel="stylesheet" href="css/menu.css">
         <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.css">
+        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <script src="js/listcars.js"></script>
         <title>List Cars</title>
     </head>
@@ -21,13 +23,26 @@
 		            <li><a href="index.html">Analyze Car Menu</a></li>
 		            	<li>
 		            		<a href="listcars.html">
-		            			Lista de Veículos
+		            			Encontre Veículos
 		            		</a>
 			        	</li>
 			    	</ul>
 				</nav>
 		</header>
-	
+    <select class="form-control" id="Tipo">
+		<option>Selecionar Tipo de Veiculo</option>
+        <option value="carros">carros</option>
+        <option value="motos">motos</option>
+        <option value="caminhoes">caminhoes</option>
+	</select>
+	<br>
+	<select class="form-control" id="Modelo">
+		<option>Selecionar o modelo do Veiculo</option>
+	</select>
+    <select class="form-control" id="Ano">
+		<option>Selecionar o ano do Veiculo</option>
+	</select>
+   
 </div>
 
 </body>
