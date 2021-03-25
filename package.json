@@ -27,6 +27,7 @@
   "dependencies": {
     "datatables.net": "^1.10.24",
     "datatables.net-dt": "^1.10.24",
-    "jquery": "^3.6.0"
+    "jquery": "^3.6.0",
+    "sinesp-api": "file:node_modules/sinesp-api"
   }
 }

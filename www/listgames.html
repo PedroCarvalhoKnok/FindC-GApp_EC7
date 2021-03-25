@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+        <meta name="color-scheme" content="light dark">
+        <link rel="stylesheet" href="css/menu.css">
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.css">
+        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+        <script src="sweetalert2.all.min.js"></script>
+        <script src="js/listgames.js"></script>
+        <title>API App Menu</title>
+    </head>
+<body>
+<div class="main">
+		<header>
+				<nav class="fixd_nav">
+					<ul>
+		            <li><a href="index.html">Analyze Car Menu</a></li>
+					<li>
+		            	<a href="listgames.html">
+		            		Encontre Jogos
+		            	</a>
+			        </li>
+		            <li>
+		            	<a href="listcars.html">
+		            		Encontre Veículos
+		            	</a>
+			        </li>
+			    	</ul>
+				</nav>
+		</header>
+        <label>Digite o título do jogo</label>
+        <input type="text" class="form-control" id="jogo" placeholder="Título">
+        <button type="button" class="btn btn-primary" onclick="getGamesbyTitle()">Busque seu Veículo</button>
+        <div>
+         <table id="Games-table" class="table-sm cards table-bordered table-responsive" cellspacing="0" width="100%" >
+        <thead>
+              <tr>
+
+             <th>Coluna 1</th>
+             <th>Coluna 2</th>
+             <th>Coluna 3</th>
+             <th>Coluna 4</th>
+
+             </tr>
+           </thead>
+         </table>
+        </div>
+	
+</div>
+
+</body>
+</html>
