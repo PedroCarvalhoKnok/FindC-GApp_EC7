@@ -2,7 +2,6 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
         <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
@@ -10,11 +9,7 @@
         <link rel="stylesheet" href="css/menu.css">
         <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.css">
         <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-        <script src="sweetalert2.all.min.js"></script>
-        <script src="js/listcars.js"></script>
+        <link rel="stylesheet" href="css/listcars.css">
         <title>List Cars</title>
     </head>
 <body>
@@ -22,20 +17,22 @@
 		<header>
 				<nav class="fixd_nav">
 					<ul>
-		            <li><a href="index.html">Analyze Car Menu</a></li>
+		            <li><a href="index.html">Menu</a></li>
                         <li>
 		            	    <a href="listgames.html">
-		            		    Encontre Jogos
+		            		    Jogos
 		            	    </a>
 			            </li>
 		            	<li>
 		            		<a href="listcars.html">
-		            			Encontre Veículos
+		            		    Veículos
 		            		</a>
 			        	</li>
 			    	</ul>
 				</nav>
 		</header>
+    <br>
+    <label>Tipo</label>
     <select class="form-control" id="Tipo">
 		<option>Selecionar Tipo de Veiculo</option>
         <option value="carros">carros</option>
@@ -43,30 +40,47 @@
         <option value="caminhoes">caminhoes</option>
 	</select>
 	<br>
-    <select class="form-control" id="Marca">
-		<option value="">Selecionar a marca do Veiculo</option>
+    <label>Marca</label>
+    <select class="form-control" id="Marca" placeholder="Escolha a Marca">
+	  </select>
+  <br>
+    <label>Modelo</label>
+	<select class="form-control" id="Modelo" placeholder="Escolha o Modelo">
 	</select>
-	<select class="form-control" id="Modelo">
-		<option value="">Selecionar o modelo do Veiculo</option>
-	</select>
-    <select class="form-control" id="Ano">
-		<option value="">Selecionar o ano do Veiculo</option>
+  <br>
+    <label>Ano</label>
+    <select class="form-control" id="Ano" placeholder="Escolha o Ano">
 	</select>
     <br>
-    <button type="button" class="btn btn-primary" onclick="getVehicle()">Busque seu Veículo</button>
-    
- <div class="card" style="width: 18rem;">
-  <div class="card-body">
-    <h5 id="modelo_veiculo" class="card-title"></h5>
-    <h6 id="marca_veiculo" class="card-subtitle mb-2 text-muted"></h6>
-    <p id="valor_veiculo" class="card-text"></p>
-    <p id="ano_veiculo" class="card-text"></p>
-    <p id="combustivel_veiculo" class="card-text"></p>
-    <p id="referencia" class="card-text"></p>
+ <div class="container">
+	 <div class ="box">
+   <center>   
+    <button id="btnSearch" type="button" class="btn btn-primary">Busque seu Veículo</button>
+    <br>
+    <div class="card" style="width: 18rem;">
+      <div id="div_vehicle" class="card-body" style="visibility:hidden">
+        <ul class="list-group list-group-flush">
+        <li class="list-group-item"><h5 id="modelo_veiculo" class="card-title"></h5></li>
+        <li class="list-group-item"><p id="marca_veiculo" class="card-subtitle mb-2 text-muted"></p></li>
+        <li class="list-group-item"><p id="valor_veiculo" class="card-text"></p></li>
+        <li class="list-group-item"><p id="ano_veiculo" class="card-text"></p></li>
+        <li class="list-group-item"><p id="combustivel_veiculo" class="card-text"></p></li>
+        <li class="list-group-item"><p id="referencia" class="card-text"></p></li>
+        </ul>
+      </div>
+    </div>
+    </center>
   </div>
-</div>
+ </div>
    
 </div>
+        
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+        <script src="sweetalert2.all.min.js"></script>
+        <script src="js/listcars.js"></script>
 
 </body>
 

@@ -1,53 +1,64 @@
 
+   $(function() {
+    
     var html = '';
     var htmlModel = '';
     var htmlYear = '';
     var url;
 
+
     $('#Tipo').on('change', function () {
         let val = $(this).val()
         if (val == 'carros') {
-          load(val)
-        } else if(val = 'motos') {
+          load(val);
+          
+        }
+        else if(val == 'motos') {
           load(val);
         }
         else{
           load(val);
         }
+         html = '';
+         htmlModel = '';
+         htmlYear = '';
       });
 
   function load(tipoVeiculo){
 
     url = `https://parallelum.com.br/fipe/api/v1/${tipoVeiculo}/marcas`;
 
-    const myRequest = new Request(url, {method: 'GET'});
+    let myRequest = new Request(url, {method: 'GET'});
 
     fetch(myRequest)
-     .then(response => {
+     .then(function(response){
     if (response.status === 200) {
      // return response.json();
-      return response;
+      return response.json();
     } else {
       throw new Error('Ops! Houve um erro em nosso servidor.');
     }
    })
     .then(function(data) {
+     html = '<option value="">Selecionar a marca do Veiculo</option>';
      for(var i = 0; i < data.length; i++){
         html += '<option value='+ data[i].codigo +'>'+ data[i].nome + '</option>';
      }
 
      $('#Marca').html(html);
 
+     html = '';
+
      $(document).on('change', '#Marca', function(){
         var marca_id = $(this).val();
         console.log(marca_id);
-        if(modelo_id != null){
+        if(marca_id != null){
             load_Model('Marca', marca_id, url);
         }
     });
-   }).catch(error => {
-    console.error(error);
-   });
+   }).catch(error => 
+    console.log(error)
+   );
 
 };
 
@@ -58,7 +69,7 @@
    const myRequest = new Request(url, {method: 'GET'});
 
    fetch(myRequest)
-    .then(response => {
+    .then(function(response){
    if (response.status === 200) {
      return response.json();   
    } else {
@@ -66,11 +77,14 @@
    }
   })
    .then(function(data) {
+    htmlModel = '<option value="">Selecionar o modelo do Veiculo</option>';
     for(var i = 0; i < data.modelos.length; i++){
-      htmlModel += '<option value='+ data[i].codigo +'>'+ data[i].nome + '</option>';
+      htmlModel += '<option value='+ data.modelos[i].codigo +'>'+ data.modelos[i].nome + '</option>';
     }
 
     $('#Modelo').html(htmlModel);
+
+    htmlModel = '';
 
     $(document).on('change', '#Modelo', function(){
        var modelo_id = $(this).val();
@@ -79,9 +93,9 @@
            load_Year('Modelo', modelo_id, url);
        }
    });
-  }).catch(error => {
-   console.error(error);
-  });
+  }).catch(error => 
+    console.log(error)
+   );
 
   };
 
@@ -93,147 +107,89 @@
     const myRequest = new Request(url, {method: 'GET'});
  
     fetch(myRequest)
-     .then(response => {
+     .then(function(response){
     if (response.status === 200) {
-      return response;   
+      return response.json();   
     } else {
       throw new Error('Ops! Houve um erro em nosso servidor.');
     }
    })
     .then(function(data) {
+     htmlYear = '<option value="">Selecionar o ano do Veiculo</option>';
      for(var i = 0; i < data.length; i++){
       htmlYear += '<option value='+ data[i].codigo +'>'+ data[i].nome + '</option>';
      }
  
      $('#Ano').html(htmlYear);
+
+     htmlYear = '';
  
-    //  $(document).on('change', '#Ano', function(){
-    //     var ano_id = $(this).val();
-    //     console.log(ano_id);
-    //     if(ano_id != null){
-    //       load_Vehicle('Ano', ano_id, url);
-    //     }
-    // });
-   }).catch(error => {
-    console.error(error);
-   });
+   }).catch(error => 
+    console.log(error)
+   );
  
    };
 
-  //  function load_Vehicle(id, ano_id,url){
 
-  //   url = url + `/${ano_id}`;
- 
-  //   const myRequest = new Request(url, {method: 'GET'});
- 
-  //   fetch(myRequest)
-  //    .then(response => {
-  //   if (response.status === 200) {
-  //     return response.json();   
-  //   } else {
-  //     throw new Error('Ops! Houve um erro em nosso servidor.');
-  //   }
-  //  })
-  //   .then(function(data) {
+   $('#btnSearch').on('click', function(event) {
 
-  //    //retorno do veiculo filtrado pelo usuario
-     
-  //  }).catch(error => {
-  //   console.error(error);
-  //  });
- 
-  //  };
+    event.preventDefault();
 
+    let selectMarca = document.getElementById('Marca');
+    let selectModelo = document.getElementById('Modelo');
+    let selectAno = document.getElementById('Ano');
 
-   function getVehicle(){
-    selectMarca = document.getElementById('Marca');
-    selectModelo = document.getElementById('Modelo');
-    selectAno = document.getElementById('Ano');
-
-    if (selectMarca.value == "" || selectMarca.value == null || selectMarca.value == undefined) {
-      Swal.fire({
-        icon: 'error',
-        title: 'Marca não encontrada',
-        text: 'Selecione uma valida '
-      });
+    if (selectMarca.value == "Selecionar a marca do Veiculo" || selectMarca.value == null || selectMarca.value == undefined) {
+      
       return;
     }
     
-    else if (selectModelo.value == "" || selectModelo.value == null || selectModelo.value == undefined) {
-      Swal.fire({
-        icon: 'error',
-        title: 'Modelo não encontrado',
-        text: 'Selecione um valido'
-      });
+    else if (selectModelo.value == "Selecionar o modelo do Veiculo" || selectModelo.value == null || selectModelo.value == undefined) {
+      
       return;
     }
-    else if (selectAno.value == "" || selectAno.value == null || selectAno.value == undefined) {
-      Swal.fire({
-        icon: 'error',
-        title: 'Marca não encontrada',
-        text: 'Selecione um valido'
-      });
+    else if (selectAno.value == "Selecionar o ano do Veiculo" || selectAno.value == null || selectAno.value == undefined) {
+      
       return;
     }
     else{
 
-      const myRequest = new Request(url, {method: 'GET'});
+      let urlVehicle = `https://parallelum.com.br/fipe/api/v1/carros/marcas/${selectMarca.value}/modelos/${selectModelo.value}/anos/${selectAno.value}`;
+
+      const myRequest = new Request(urlVehicle, {method: 'GET'});
  
       fetch(myRequest)
-     .then(response => {
+     .then(function(response){
       if (response.status === 200) {
-        Swal.fire({
-          icon: 'success',
-          title: 'Veiculo encontrado!',
-          showConfirmButton: true
-        })
+
       return response.json();   
       } else {
       throw new Error('Ops! Houve um erro em nosso servidor.');
       }
     })
     .then(function(data) {
+    
+      $("#modelo_veiculo").html('Modelo: ' + data.Modelo);
+      $("#marca_veiculo").html('Marca: ' + data.Marca);
+      $("#valor_veiculo").html('Preço: ' + data.Valor);
+      $("#ano_veiculo").html('Ano de Fabricação: ' + data.AnoModelo);
+      $("#combustivel_veiculo").html('Combustível: ' + data.Combustivel);
+      $("#referencia").html('Última atualização: ' + data.MesReferencia);
 
-      let modelo = document.getElementById('modelo_veiculo');
-      let marca = document.getElementById('marca_veiculo');
-      let valor = document.getElementById('valor_veiculo');
-      let ano = document.getElementById('ano_veiculo');
-      let combustivel = document.getElementById('combustivel_veiculo');
-      let referencia = document.getElementById('referencia');
+      document.getElementById("div_vehicle").style.visibility = "visible";
 
-      modelo.value = data.Modelo;
-      marca.value = data.Marca;
-      valor.value = data.Valor;
-      ano.value = data.AnoModelo;
-      combustivel.value = data.Combustivel;
-      referencia.value = data.MesReferencia;
 
      
-   }).catch(error => {
-    console.error(error);
-   });
+   }).catch(error => 
+    console.log(error)
+   );
       
     }
 
-
-   }
     
-// $.getJSON(`https://parallelum.com.br/fipe/api/v1/${tipoVeiculo}/marcas`, function(data){
-    //     html += '<option>Selecionar '+ id +'</option>';
-    //     console.log(data);
-    //     if(id == 'Estado' && modelo_id == null){
-    //         for(var i = 0; i < data.estados.length; i++){
-    //             html += '<option value='+ data.estados[i].sigla +'>'+ data.estados[i].nome+'</option>';
-    //         }
-    //     }else{
-    //         for(var i = 0; i < data.estados.length; i++){
-    //             if(data.estados[i].sigla == cidade_id){
-    //                 for(var j = 0; j < data.estados[i].cidades.length; j++){
-    //                     html += '<option value='+ data.estados[i].sigla +'>'+data.estados[i].cidades[j]+ '</option>';
-    //                 }
-    //             }
-    //         }
-    //     }
+  });
 
-    //     $('#Ano').html(html);
-    // });
+  
+ 
+  });
+    

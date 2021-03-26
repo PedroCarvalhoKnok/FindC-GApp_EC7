@@ -1,3 +1,6 @@
+
+$(function() {
+
 var _GamesTable = $("#Games-table");
 
 function getGamesbyTitle(){
@@ -9,7 +12,7 @@ function getGamesbyTitle(){
     const myRequest = new Request(url, {method: 'GET'});
  
       fetch(myRequest)
-     .then(response => {
+     .then(function(response){
       if (response.status === 200) {
         Swal.fire({
           icon: 'success',
@@ -81,9 +84,9 @@ function getGamesbyTitle(){
 
      
      
-   }).catch(error => {
-    console.error(error);
-   });
+   }).catch(error => 
+    console.log(error)
+   );
 
 }
 
@@ -96,7 +99,7 @@ function conversaoDolar(){
     const myRequest = new Request(url, {method: 'GET'});
  
       fetch(myRequest)
-     .then(response => {
+     .then(function(response){
       if (response.status === 200) {
             return response.json();   
       } else {
@@ -111,11 +114,13 @@ function conversaoDolar(){
     
         let media = (data.USD.high + data.USD.low) / 2
         conversao = media;   
-   }).catch(error => {
-    console.error(error);
-   });
+   }).catch(error => 
+    console.log(error)
+   );
 
 
    return conversao;
 
 }
+
+});
