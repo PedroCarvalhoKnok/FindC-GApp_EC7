@@ -134,10 +134,15 @@
    $('#btnSearch').on('click', function(event) {
 
     event.preventDefault();
-
+    let selectTipo = document.getElementById('Tipo');
     let selectMarca = document.getElementById('Marca');
     let selectModelo = document.getElementById('Modelo');
     let selectAno = document.getElementById('Ano');
+
+    if (selectTipo.value == "Selecionar a marca do Veiculo" || selectTipo.value == null || selectTipo.value == undefined) {
+      
+      return;
+    }
 
     if (selectMarca.value == "Selecionar a marca do Veiculo" || selectMarca.value == null || selectMarca.value == undefined) {
       
@@ -154,7 +159,7 @@
     }
     else{
 
-      let urlVehicle = `https://parallelum.com.br/fipe/api/v1/carros/marcas/${selectMarca.value}/modelos/${selectModelo.value}/anos/${selectAno.value}`;
+      let urlVehicle = `https://parallelum.com.br/fipe/api/v1/${selectTipo.value}/marcas/${selectMarca.value}/modelos/${selectModelo.value}/anos/${selectAno.value}`;
 
       const myRequest = new Request(urlVehicle, {method: 'GET'});
  

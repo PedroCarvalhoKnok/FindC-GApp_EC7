@@ -9,7 +9,8 @@
         <link rel="stylesheet" href="css/menu.css">
         <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.css">
         <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <title>API App Menu</title>
+        <link rel="stylesheet" href="css/center.css">
+        <title>List Games</title>
     </head>
 <body>
 <div class="main">
@@ -32,20 +33,29 @@
 		</header>
         <label>Digite o título do jogo</label>
         <input type="text" class="form-control" id="jogo" placeholder="Título">
-        <button type="button" class="btn btn-primary" onclick="getGamesbyTitle()">Busque seu Veículo</button>
-        <div>
-         <table id="Games-table" class="table-sm cards table-bordered table-responsive" cellspacing="0" width="100%" >
+        <div class="container">
+	    <div class ="box">
+        <button id="btnSearch" type="button" class="btn btn-primary">Busque seus Jogos</button>
+        <br>
+        <br>
+        <div class="card" style="width: 18rem;">
+        <div id="div_games" class="card-body" style="visibility:hidden">
+        <input class="form-control" id="filter_games" type="text" placeholder="Procurar">
+        <br>
+        <table class="table table-bordered table-striped">
         <thead>
-              <tr>
-
-             <th>Coluna 1</th>
-             <th>Coluna 2</th>
-             <th>Coluna 3</th>
-             <th>Coluna 4</th>
-
-             </tr>
-           </thead>
-         </table>
+        <tr>
+        <th>Título</th>
+        <th>Preço</th>
+        <th>Imagem</th>
+        </tr>
+        </thead>
+        <tbody id="game_items">
+        </tbody>
+        </table>
+        </div>
+        </div>
+        </div>
         </div>
 	
 </div>
@@ -56,7 +66,7 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
         <script src="sweetalert2.all.min.js"></script>
-        <script src="js/listcars.js"></script>
+        <script src="js/listgames.js"></script>
 
 </body>
 </html>
