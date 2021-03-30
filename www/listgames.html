@@ -31,15 +31,25 @@
 			    	</ul>
 				</nav>
 		</header>
+        <nav>
+       <div class="theme-switch-wrapper">
+       <label class="theme-switch" for="checkbox">
+        <input type="checkbox" id="checkbox" />
+        <div class="slider round"></div>
+        </label>
+        </div>
+        </nav>  
         <label>Digite o título do jogo</label>
         <input type="text" class="form-control" id="jogo" placeholder="Título">
         <div class="container">
 	    <div class ="box">
+        <br>
         <button id="btnSearch" type="button" class="btn btn-primary">Busque seus Jogos</button>
         <br>
         <br>
         <div class="card" style="width: 18rem;">
         <div id="div_games" class="card-body" style="visibility:hidden">
+        <label>Filtro</label>
         <input class="form-control" id="filter_games" type="text" placeholder="Procurar">
         <br>
         <table class="table table-bordered table-striped">

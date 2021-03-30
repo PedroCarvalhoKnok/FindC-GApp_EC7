@@ -29,7 +29,7 @@ footer, header, hgroup, menu, nav, section, main {
 }
 body {
 	line-height: 1;
-  background-color: black;
+  background-color: #161625;
 }
 ol, ul {
 	list-style: none;
@@ -73,7 +73,7 @@ html, body {
 body {
   font-size: 100%;
   font-family: "Lato", sans-serif;
-  background-color: black;
+  background-color: #161625;
 }
 .overflow-hidden {
   overflow: hidden;

@@ -1,5 +1,28 @@
 
    $(function() {
+
+    const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+    const currentTheme = localStorage.getItem('theme');
+  
+    if (currentTheme) {
+        document.documentElement.setAttribute('data-theme', currentTheme);
+      
+        if (currentTheme === 'dark') {
+            toggleSwitch.checked = true;
+        }
+    }
+  
+    function switchTheme(e) {
+        if (e.target.checked) {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            localStorage.setItem('theme', 'dark');
+        }
+        else {        document.documentElement.setAttribute('data-theme', 'light');
+              localStorage.setItem('theme', 'light');
+        }    
+    }
+  
+    toggleSwitch.addEventListener('change', switchTheme, false);
     
     var html = '';
     var htmlModel = '';
@@ -36,7 +59,11 @@
      // return response.json();
       return response.json();
     } else {
-      throw new Error('Ops! Houve um erro em nosso servidor.');
+      Swal.fire({
+        icon: 'error',
+        title: 'Erro na API',
+        text: 'Ocorreu um erro no carregamento das marcas'
+      });
     }
    })
     .then(function(data) {
@@ -73,7 +100,11 @@
    if (response.status === 200) {
      return response.json();   
    } else {
-     throw new Error('Ops! Houve um erro em nosso servidor.');
+    Swal.fire({
+      icon: 'error',
+      title: 'Erro na API',
+      text: 'Ocorreu um erro no carregamento dos modelos'
+    });
    }
   })
    .then(function(data) {
@@ -111,7 +142,11 @@
     if (response.status === 200) {
       return response.json();   
     } else {
-      throw new Error('Ops! Houve um erro em nosso servidor.');
+      Swal.fire({
+        icon: 'error',
+        title: 'Erro na API',
+        text: 'Ocorreu um erro no carregamento dos anos'
+      });
     }
    })
     .then(function(data) {
@@ -169,10 +204,20 @@
 
       return response.json();   
       } else {
-      throw new Error('Ops! Houve um erro em nosso servidor.');
+        Swal.fire({
+          icon: 'error',
+          title: 'Erro na API',
+          text: 'Ocorreu um erro ao encontrar o veiculo'
+        });
       }
     })
     .then(function(data) {
+
+      Swal.fire(
+        'Sucesso',
+        'Veículo encontrado',
+        'success'
+      )
     
       $("#modelo_veiculo").html('Modelo: ' + data.Modelo);
       $("#marca_veiculo").html('Marca: ' + data.Marca);
