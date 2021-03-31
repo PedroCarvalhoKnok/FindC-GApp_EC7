@@ -1,6 +1,6 @@
 
    $(function() {
-
+    //altera o tema para escuro/claro
     const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
     const currentTheme = localStorage.getItem('theme');
   
@@ -23,6 +23,7 @@
     }
   
     toggleSwitch.addEventListener('change', switchTheme, false);
+    //
     
     var html = '';
     var htmlModel = '';
@@ -31,6 +32,9 @@
 
 
     $('#Tipo').on('change', function () {
+
+        //Monta a partir da escolha do tipo de veiculo no combo
+
         let val = $(this).val()
         if (val == 'carros') {
           load(val);
@@ -48,6 +52,8 @@
       });
 
   function load(tipoVeiculo){
+
+     //Monta as marcas disponiveis de acordo com o tipo
 
     url = `https://parallelum.com.br/fipe/api/v1/${tipoVeiculo}/marcas`;
 
@@ -91,6 +97,8 @@
 
  function load_Model(id, marca_id,url){
 
+   //Monta os modelos disponiveis de acordo com a marca
+
    url = url + `/${marca_id}/modelos`;
 
    const myRequest = new Request(url, {method: 'GET'});
@@ -133,6 +141,8 @@
 
   function load_Year(id, modelo_id,url){
 
+    //Seleciona os anos disponiveis de acordo com o modelo
+
     url = url + `/${modelo_id}/anos`;
  
     const myRequest = new Request(url, {method: 'GET'});
@@ -168,28 +178,48 @@
 
    $('#btnSearch').on('click', function(event) {
 
+    //Ativo quando o botao e clicado montando o veiculo de acordo com as carac selecionadas
+
     event.preventDefault();
     let selectTipo = document.getElementById('Tipo');
     let selectMarca = document.getElementById('Marca');
     let selectModelo = document.getElementById('Modelo');
     let selectAno = document.getElementById('Ano');
 
-    if (selectTipo.value == "Selecionar a marca do Veiculo" || selectTipo.value == null || selectTipo.value == undefined) {
-      
+    //Validacao do select
+
+    if (selectTipo.value == "Selecionar Tipo de Veiculo" || selectTipo.value == null || selectTipo.value == undefined) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Erro',
+        text: 'Selecione o tipo do veiculo'
+      });
       return;
     }
 
     if (selectMarca.value == "Selecionar a marca do Veiculo" || selectMarca.value == null || selectMarca.value == undefined) {
-      
+      Swal.fire({
+        icon: 'error',
+        title: 'Erro',
+        text: 'Selecione a marca do veiculo'
+      });
       return;
     }
     
     else if (selectModelo.value == "Selecionar o modelo do Veiculo" || selectModelo.value == null || selectModelo.value == undefined) {
-      
+      Swal.fire({
+        icon: 'error',
+        title: 'Erro',
+        text: 'Selecione o modelo do veiculo'
+      });
       return;
     }
     else if (selectAno.value == "Selecionar o ano do Veiculo" || selectAno.value == null || selectAno.value == undefined) {
-      
+      Swal.fire({
+        icon: 'error',
+        title: 'Erro',
+        text: 'Selecione o ano do veiculo'
+      });
       return;
     }
     else{

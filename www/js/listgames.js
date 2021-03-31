@@ -1,6 +1,6 @@
 
 $(function() {
-
+  //altera o tema para escuro/claro
   const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
   const currentTheme = localStorage.getItem('theme');
   
@@ -23,15 +23,27 @@ $(function() {
   }
   
   toggleSwitch.addEventListener('change', switchTheme, false);
+  //
 
-
-var _GamesTable = $("#Games-table");
 
 $('#btnSearch').on('click', function(event) {
+
+   //Ativo quando o botao e clicado chamando a api de conversao dolar-real
 
     event.preventDefault();
 
     let titulo = document.getElementById('jogo');
+
+    if(titulo.value == '' || titulo.value == null || titulo.value == undefined)
+    {
+      Swal.fire({
+        icon: 'error',
+        title: 'Erro',
+        text: 'Digite o titulo do jogo'
+      });
+
+      return;
+    }
 
     let url = "https://economia.awesomeapi.com.br/all/USD-BRL";
     //let conversao = 0;
@@ -69,6 +81,8 @@ $('#btnSearch').on('click', function(event) {
 
 function games(conversao,titulo){
 
+    //Ativa quando a conversao e feita montando a tabela dos jogos com suas caract
+
     let url = `https://www.cheapshark.com/api/1.0/games?title=${titulo}&limit=60&exact=0`;
     let html = '';
 
@@ -98,6 +112,7 @@ function games(conversao,titulo){
           html += `<td>${data[i].external}</td>`;
           html += `<td> R$ ${parseFloat(data[i].cheapest * conversao).toFixed(2).replace('.',',')}</td>`;
           html += `<td><img src="${data[i].thumb}" width="100" height="100"/></td>`;
+          html += `<td>${data[i].gameID}</td>`;
           html += '</tr>';
 
         }

@@ -7,7 +7,6 @@
         <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
         <meta name="color-scheme" content="light dark">
         <link rel="stylesheet" href="css/menu.css">
-        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.css">
         <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="css/center.css">
         <title>List Games</title>
@@ -31,48 +30,48 @@
 			    	</ul>
 				</nav>
 		</header>
-        <nav>
-       <div class="theme-switch-wrapper">
-       <label class="theme-switch" for="checkbox">
+    <nav>
+      <div class="theme-switch-wrapper">
+        <label class="theme-switch" for="checkbox">
         <input type="checkbox" id="checkbox" />
-        <div class="slider round"></div>
+      <div class="slider round"></div>
         </label>
-        </div>
-        </nav>  
+       </div>
+    </nav>  
         <label>Digite o título do jogo</label>
         <input type="text" class="form-control" id="jogo" placeholder="Título">
-        <div class="container">
-	    <div class ="box">
-        <br>
-        <button id="btnSearch" type="button" class="btn btn-primary">Busque seus Jogos</button>
-        <br>
-        <br>
+      
+         <br>
+         <button id="btnSearch" type="button" class="btn btn-primary">Busque seus Jogos</button>
+         <br>
+         <br>
         <div class="card" style="width: 18rem;">
         <div id="div_games" class="card-body" style="visibility:hidden">
+        <div class="box">
         <label>Filtro</label>
         <input class="form-control" id="filter_games" type="text" placeholder="Procurar">
-        <br>
+        <br>       
         <table class="table table-bordered table-striped">
-        <thead>
-        <tr>
-        <th>Título</th>
-        <th>Preço</th>
-        <th>Imagem</th>
-        </tr>
-        </thead>
-        <tbody id="game_items">
-        </tbody>
+            <thead>
+                <tr>
+                    <th>Título</th>
+                    <th>Preço</th>
+                    <th>Imagem</th>
+                    <th>Game ID</th>
+                </tr>
+            </thead>
+            <tbody id="game_items">
+            </tbody>
         </table>
         </div>
         </div>
-        </div>
-        </div>
+      </div>
+    
 	
 </div>
 
 
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
         <script src="sweetalert2.all.min.js"></script>
