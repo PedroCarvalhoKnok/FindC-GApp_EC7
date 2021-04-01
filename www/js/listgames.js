@@ -1,4 +1,9 @@
 
+/**
+ * @autores Felipe S.,Lucas C.,Milena B. e Pedro C.
+ */
+
+
 $(function() {
   //altera o tema para escuro/claro
   const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
