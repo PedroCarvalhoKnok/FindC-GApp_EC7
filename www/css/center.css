@@ -13,7 +13,7 @@
     align-items: center
 }
 .box {
-    width: 300px;
+    width: 352px;
     height: 200px;
     padding-left: 30px;   
 }
@@ -33,6 +33,10 @@
     --font-color: #337ab7;
     --bg-color: #161625;
     --heading-color: #818cab;
+}
+
+.table table-bordered table-dark{
+  border-radius: 15px
 }
 
 body {

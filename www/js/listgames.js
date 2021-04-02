@@ -121,7 +121,6 @@ function games(conversao,titulo){
           html += '</tr>';
 
         }
-
         
         $('#game_items').html(html);
 
@@ -143,6 +142,7 @@ $("#filter_games").on("keyup", function() {
       $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
     });
   });
+
 
 
 });
