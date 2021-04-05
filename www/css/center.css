@@ -13,9 +13,18 @@
     align-items: center
 }
 .box {
-    width: 352px;
+    width: 360px;
     height: 200px;
     padding-left: 30px;   
+}
+
+p{
+  margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
 }
 
 /*troca de cores na tela pelo slider*/  
