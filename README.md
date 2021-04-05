@@ -15,5 +15,5 @@ Segue o link com guia ***[aqui](https://cordova.apache.org/#getstarted)***.
 
 ***Detalhes***
 
-A aplicação utiliza ***HTML5, CSS, JAVASCRIPT, JQUERY(3.6.0) E BOOTSTRAP(3.3.7)***, além da lib ***SWEET ALERT***.
+A aplicação utiliza ***HTML5, CSS, JAVASCRIPT, JQUERY(3.6.0) E BOOTSTRAP(3.3.7)***, além da lib ***SWEET ALERT(2.0)*** para alertas.
 
