@@ -10,25 +10,27 @@ uma outra API para converter o preço para R$), steam Id do jogo e a imagem usad
 
 ***Instalação***
 
-Para rodar a aplicação na sua máquina(browser) é necessario ter o ***Apache Cordova*** instalado.
+1. Para rodar a aplicação na sua máquina(browser) é necessario ter o ***Apache Cordova*** instalado.
 
 Segue o link com guia de instalação do Cordova ***[aqui](https://cordova.apache.org/#getstarted)***.
 
-Para gerar o build para a plataforma Android é necessário ter o Android Studio instalado para geração do SDK e deve ser mapeado nas variáveis de ambiente.
+2. Para gerar o build para a plataforma Android é necessário ter o Android Studio instalado para geração do SDK e deve ser mapeado nas variáveis de ambiente.
 
-Segue o link de download do Abdroid Studio ***[aqui](https://developer.android.com/studio)***.
+Segue o link de download do Android Studio ***[aqui](https://developer.android.com/studio)***.
 
-É necessario ter o Java Development Kit instalada e mapeada nas variáveis de ambiente.
+3. É necessario ter o Java Development Kit instalada e mapeada nas variáveis de ambiente.
 
-Segue o link para download do JDK 8 ***[aqui](https://www.oracle.com/br/java/technologies/javase/javase-jdk8-downloads.html).
+Segue o link para download do JDK 8 ***[aqui](https://www.oracle.com/br/java/technologies/javase/javase-jdk8-downloads.html)***.
 
-Para criar a aplicação é necessário rodar no cmd do código fonte: "cordova create hello com.example.hello HelloWorld"
+4. Para criar a aplicação é necessário rodar no cmd do código fonte: "cordova create hello com.example.hello HelloWorld"
 (Criando o app)
 
-Para adicionar uma plataforma utilize o comando de acordo com a plataforma alvo: "cordova platform add android".
+5. Para adicionar uma plataforma utilize o comando de acordo com a plataforma alvo: "cordova platform add android".
 (Exemplo para Android)
 
-Para buildar a aplicação é possivel tanto pelo Android Studio pela aba Build do menu superior como pelo comando: "cordova build".
+6. Para buildar a aplicação é possivel tanto pelo Android Studio pela aba Build do menu superior como pelo comando: "cordova build".
+
+Dúvidas sobre outros comandos do Cordova está ***[aqui](https://cordova.apache.org/docs/en/3.1.0/guide/cli/)***.
 
 ***Detalhes***
 
