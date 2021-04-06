@@ -28,4 +28,43 @@ Milena Barbosa - 081180026
 
 Pedro Carvalho - 081180028
 
+***Evidências***
 
+#### Listagem de Jogos
+
+Jogos Batman
+<img src="Evidencias_e_APK/Prints_Jogos/Print_TelaJogos.jpg" />
+
+
+Jogos Batman 2
+<img src="Evidencias_e_APK/Prints_Jogos/Print_TelaJogos2.jpg" />
+
+
+Jogos Borderlands
+<img src="Evidencias_e_APK/Prints_Jogos/Print_telaJogos3.jpg" />
+
+
+#### Listagem de Veiculos
+
+Veiculos Tipo
+<img src="Evidencias_e_APK/Prints_Veiculos/Print_Tipo.jpg" />
+
+
+Veiculos Marca
+<img src="Evidencias_e_APK/Prints_Veiculos/Print_Marca.jpg" />
+
+
+Veiculos Modelo
+<img src="Evidencias_e_APK/Prints_Veiculos/Print_Modelo.jpg" />
+
+
+Veiculos Ano
+<img src="Evidencias_e_APK/Prints_Veiculos/Print_Ano.jpg" />
+
+
+Veiculos Tela Audi
+<img src="Evidencias_e_APK/Prints_Veiculos/Print_TelaVeiculos.jpg" />
+
+
+Veiculos Tela Caminhão
+<img src="Evidencias_e_APK/Prints_Veiculos/Print_TelaVeiculos2.jpg" />
