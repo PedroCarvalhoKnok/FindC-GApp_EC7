@@ -21,8 +21,11 @@ A aplicação utiliza ***HTML5, CSS, JAVASCRIPT, JQUERY(3.6.0) E BOOTSTRAP(3.3.7
 
 
 Felipe Soares - 081180008
+
 Lucas Caffer - 081180024
+
 Milena Barbosa - 081180026
+
 Pedro Carvalho - 081180028
 
 
