@@ -12,21 +12,21 @@ uma outra API para converter o preço para R$), steam Id do jogo e a imagem usad
 
 1. Para rodar a aplicação na sua máquina(browser) é necessario ter o ***Apache Cordova*** instalado.
 
-Segue o link com guia de instalação do Cordova ***[aqui](https://cordova.apache.org/#getstarted)***.
+   Segue o link com guia de instalação do Cordova ***[aqui](https://cordova.apache.org/#getstarted)***.
 
 2. Para gerar o build para a plataforma Android é necessário ter o Android Studio instalado para geração do SDK e deve ser mapeado nas variáveis de ambiente.
 
-Segue o link de download do Android Studio ***[aqui](https://developer.android.com/studio)***.
+   Segue o link de download do Android Studio ***[aqui](https://developer.android.com/studio)***.
 
 3. É necessario ter o Java Development Kit instalada e mapeada nas variáveis de ambiente.
 
-Segue o link para download do JDK 8 ***[aqui](https://www.oracle.com/br/java/technologies/javase/javase-jdk8-downloads.html)***.
+   Segue o link para download do JDK 8 ***[aqui](https://www.oracle.com/br/java/technologies/javase/javase-jdk8-downloads.html)***.
 
-4. Para criar a aplicação é necessário rodar no cmd do código fonte: "cordova create hello com.example.hello HelloWorld"
-(Criando o app)
+4. Para criar a aplicação(App) é necessário rodar no cmd do código fonte: "cordova create hello com.example.hello HelloWorld".
 
-5. Para adicionar uma plataforma utilize o comando de acordo com a plataforma alvo: "cordova platform add android".
-(Exemplo para Android)
+
+5. Para adicionar uma plataforma (módulo para o Android Studio) utilize o comando de acordo com a plataforma alvo: "cordova platform add android".
+(Exemplo para Android) 
 
 6. Para buildar a aplicação é possivel tanto pelo Android Studio pela aba Build do menu superior como pelo comando: "cordova build".
 
