@@ -10,10 +10,22 @@ uma outra API para converter o preço para R$), steam Id do jogo e a imagem usad
 
 ***Instalação***
 
-Para rodar a aplicação na sua máquina é necessario ter o ***Apache Cordova*** instalado.
+Para rodar a aplicação na sua máquina(WEB) é necessario ter o ***Apache Cordova*** instalado.
 Segue o link com guia ***[aqui](https://cordova.apache.org/#getstarted)***.
 
 ***Detalhes***
 
-A aplicação utiliza ***HTML5, CSS, JAVASCRIPT, JQUERY(3.6.0) E BOOTSTRAP(3.3.7)***, além da lib ***SWEET ALERT(2.0)*** para alertas.
+A aplicação utiliza ***HTML5, CSS, JAVASCRIPT, JQUERY(3.6.0) E BOOTSTRAP(3.3.7)***, além da lib ***SWEET ALERT(1.0)*** para alertas.
+
+***Integrantes***
+
+
+Felipe Soares - 081180008
+
+Lucas Caffer - 081180024
+
+Milena Barbosa - 081180026
+
+Pedro Carvalho - 081180028
+
 
